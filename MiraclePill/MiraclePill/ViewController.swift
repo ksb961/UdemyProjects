@@ -12,6 +12,10 @@ class ViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDeleg
 
     @IBOutlet weak var statePicker: UIPickerView!
     
+    @IBOutlet weak var cLabel: UILabel!
+    @IBOutlet weak var cTextField: UITextField!
+    @IBOutlet weak var zcTextField: UITextField!
+    @IBOutlet weak var zCode: UILabel!
     @IBOutlet weak var stateButton: UIButton!
     
     let states = ["Alaska", "Arkansas", "Alabama", "California", "Maine", "New York"]
@@ -30,6 +34,10 @@ class ViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDeleg
 
     @IBAction func stateBtnPress(_ sender: Any) {
         statePicker.isHidden = false;
+        cLabel.isHidden = true;
+        cTextField.isHidden = true;
+        zCode.isHidden = true;
+        zcTextField.isHidden = true;
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -49,6 +57,10 @@ class ViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDeleg
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         stateButton.setTitle(states[row], for: UIControlState.normal)
         statePicker.isHidden = true;
+        cLabel.isHidden = false;
+        cTextField.isHidden = false;
+        zCode.isHidden = false;
+        zcTextField.isHidden = false;
     }
     
 
